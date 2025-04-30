@@ -1,0 +1,21 @@
+# lifecycle {
+     prevent_destroy = true
+   }
+# lifecycle {
+     ignore_changes = [<attribute>] # This attribute "must be a valid attribute of that resource block" and "must be exist inside the same resource block" where this lifecycle block is defined
+   }
+# lifecycle {
+    create_before_destroy = true
+  }
+
+
+# The lifecycle block must be placed inside the resource block in Terraform to control how terraform handles changes to that resource.
+ 
+# You can only use one lifecycle block per resource.
+ 
+# To apply multiple lifecycle rules together, combine them in a single block,like this
+ lifecycle {
+    prevent_destroy     = true
+    ignore_changes      = [attribute]
+    create_before_destroy = true
+}

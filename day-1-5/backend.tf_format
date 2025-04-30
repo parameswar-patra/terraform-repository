@@ -1,0 +1,20 @@
+# without dynamodb state lock table
+terraform {
+backend "s3" {
+    bucket         = ""  # Name of the S3 bucket where the state will be stored.
+    region         =  ""
+    key            = "" # Path within the bucket where the state will be read/written.
+}
+}
+
+
+# with dynamodb state lock table
+terraform {
+backend "s3" {
+    bucket         = ""  # Name of the S3 bucket where the state will be stored.
+    region         =  ""
+    key            = "" # Path within the bucket where the state will be read/written.
+    dynamodb_table = "" # DynamoDB table used for state locking
+    encrypt        = true  # Ensures the state is encrypted at rest in S3.
+}
+}

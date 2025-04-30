@@ -1,0 +1,11 @@
+version.tf
+provider.tf
+main.tf
+variables.tf
+state file(terraform.tfstate)
+terraform.tfvars
+dev.tfvars
+output.tf
+backend.tf(s3 and s3+dynamodb lock table)
+depends_on
+life cycle rules

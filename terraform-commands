@@ -1,0 +1,26 @@
+terraform --version
+code --version
+aws --version
+aws configure list
+aws iam list-users
+
+terraform init
+terraform init -upgrade
+
+terraform validate
+terraform fmt
+
+terraform plan
+terraform apply
+
+terraform apply -auto-approve
+terraform destroy -auto-approve
+
+terraform plan --target=<resource type>.<resource name>
+terraform apply --target=<resource type>.<resource name>
+terraform destroy --target=<resource type>.<resource name>
+
+terraform plan -var-file="<custom name.tfvars>"
+terraform apply -var-file="<custom name.tfvars>"
+
+terraform output <output name> #if output sensitive=true
