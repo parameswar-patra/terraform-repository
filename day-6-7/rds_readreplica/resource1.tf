@@ -113,13 +113,14 @@ resource "aws_nat_gateway" "my_NAT_gateway_1" {
   }
   depends_on = [aws_internet_gateway.my_IG_1]
 }
-#route table and edit route(for private subnets)
+# route table (for private subnets)
 resource "aws_route_table" "my_RT_2" {
     vpc_id = aws_vpc.my_vpc_1.id
     tags = {
         Name = "my-RT-2"
     }         
 }
+# edit routes (for private subnets)
 resource "aws_route" "private_nat_access" {
   route_table_id         = aws_route_table.my_RT_2.id
   destination_cidr_block = "0.0.0.0/0"
